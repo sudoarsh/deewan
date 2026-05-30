@@ -1,44 +1,48 @@
-body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; background-color: #fcfcfc; color: #333; margin: 0; padding: 20px; }
-.container { max-width: 1400px; margin: 0 auto; }
-h2 { text-align: center; color: #2c3e50; }
-.controls { margin-bottom: 20px; padding: 15px; background: #fff; border: 1px solid #e0e0e0; border-radius: 6px; display: flex; justify-content: center; gap: 20px; font-size: 16px; }
-.control-label { font-weight: bold; color: #555; }
-.table-wrapper { overflow-x: auto; }
-table { width: 100%; border-collapse: collapse; background: #fff; box-shadow: 0 1px 4px rgba(0,0,0,0.1); }
-th, td { padding: 15px 20px; border: 1px solid #ddd; vertical-align: top; }
-th { background-color: #2c3e50; color: white; position: sticky; top: 0; }
-.id-col { text-align: center; font-weight: bold; background-color: #f8f9fa; width: 50px; font-family: monospace; }
+/* =========================================
+   BULLETPROOF URDU & DIFF STYLES
+   (Overrides Cayman Theme Defaults)
+   ========================================= */
 
-/* Enforced Nastaliq Typography */
-.urdu-text { 
-    font-family: "Jameel Noori Nastaleeq", "Nafees Nastaleeq", "Noto Nastaliq Urdu", serif; 
-    font-size: 24px; 
-    line-height: 2.4; 
-    text-align: right; 
-    direction: rtl; 
-    width: 23%; 
+/* 1. Force Nastaliq, RTL, and EXACTLY Two Lines */
+#deewanTable .urdu-text {
+    font-family: "Jameel Noori Nastaleeq", "Nafees Nastaleeq", "Noto Nastaliq Urdu", serif !important;
+    font-size: 24px !important;
+    line-height: 2.4 !important;
+    text-align: right !important;
+    direction: rtl !important;
+    white-space: nowrap !important; /* Prevents word-wrapping, forcing exactly 2 lines */
 }
 
-/* Base Diff Formatting */
-span.diff { 
-    padding: 0 4px; 
-    border-radius: 3px; 
-    font-weight: bold; 
+/* 2. Force Diff Highlighting Colors */
+#deewanTable span.diff { 
+    padding: 0 4px !important; 
+    border-radius: 3px !important; 
+    font-weight: bold !important; 
+    background-color: transparent; /* Reset Cayman backgrounds */
 }
-
-/* THE COLORS */
 
 /* Green: The Anchor/Consensus Reading */
-span.diff-anchor { background-color: #d4edda; color: #155724; border-bottom: 2px solid #28a745; } 
+#deewanTable span.diff-anchor { background-color: #d4edda !important; color: #155724 !important; border-bottom: 2px solid #28a745 !important; } 
 
 /* Red: GM's Ideological Recension (Locked) */
-span.diff-gm { background-color: #f8d7da; color: #721c24; border-bottom: 2px solid #dc3545; } 
+#deewanTable span.diff-gm { background-color: #f8d7da !important; color: #721c24 !important; border-bottom: 2px solid #dc3545 !important; } 
 
-/* Yellow: Variant Reading 1 (e.g., SJ's scribal errors) */
-span.diff-var1 { background-color: #fff3cd; color: #856404; border-bottom: 2px solid #ffc107; } 
+/* Yellow: Variant Reading 1 */
+#deewanTable span.diff-var1 { background-color: #fff3cd !important; color: #856404 !important; border-bottom: 2px solid #ffc107 !important; } 
 
-/* Blue: Variant Reading 2 (if a third distinct reading exists) */
-span.diff-var2 { background-color: #cce5ff; color: #004085; border-bottom: 2px solid #007bff; }
+/* Blue: Variant Reading 2 */
+#deewanTable span.diff-var2 { background-color: #cce5ff !important; color: #004085 !important; border-bottom: 2px solid #007bff !important; }
 
-/* Purple: Variant Reading 3 (if a fourth distinct reading exists) */
-span.diff-var3 { background-color: #e2d9f3; color: #4a2377; border-bottom: 2px solid #6f42c1; }
+/* Purple: Variant Reading 3 */
+#deewanTable span.diff-var3 { background-color: #e2d9f3 !important; color: #4a2377 !important; border-bottom: 2px solid #6f42c1 !important; }
+
+/* 3. Fix Table Layout under Cayman */
+#deewanTable th {
+    text-align: center !important;
+    background-color: #2c3e50 !important;
+    color: white !important;
+}
+#deewanTable td.id-col {
+    text-align: center !important;
+    vertical-align: middle !important;
+}

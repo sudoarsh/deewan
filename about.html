@@ -11,14 +11,35 @@
 </head>
 <body>
 
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="sources.html">The Witnesses</a>
-        <a href="about.html" class="active">About</a>
-        <a href="analysis.html">Analysis</a>
-        <a href="downloads.html">Downloads</a>
-        <a href="view.html">View Text</a>
-    </nav>
+<nav class="site-nav">
+    <button class="menu-toggle" id="mobile-menu" aria-label="Toggle navigation">
+        ☰
+    </button>
+    
+    <ul class="nav-links" id="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        
+        <li class="dropdown">
+            <a href="#" class="dropbtn">Context ▾</a>
+            <div class="dropdown-content">
+                <a href="about.html">About the Poetess</a>
+                <a href="bibliography.html">Bibliography & Links</a>
+                <a href="gallery.html">Visual Archive</a>
+            </div>
+        </li>
+
+        <li class="dropdown">
+            <a href="#" class="dropbtn">The Text ▾</a>
+            <div class="dropdown-content">
+                <a href="witnesses.html">Witnesses</a>
+                <a href="view.html">Interactive Collation</a>
+                <a href="analysis.html">Computational Analysis</a>
+            </div>
+        </li>
+
+        <li><a href="downloads.html">Downloads</a></li>
+    </ul>
+</nav>
 
     <div class="hero" style="padding: 3rem 1rem; margin-bottom: 2rem;">
         <h1 style="font-family: 'Noto Nastaliq Urdu', serif; font-size: 3rem;">ماہ لقا بائی چندا — ایک تعارف</h1>

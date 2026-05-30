@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Findings - Collation Analysis</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .finding-card { background: white; padding: 35px; border-radius: 12px; border: 1px solid var(--border); margin-bottom: 30px; line-height: 1.7; }
+        .finding-card h2 { color: var(--primary); margin-top: 0; font-size: 1.6rem; border-bottom: 2px solid var(--accent); padding-bottom: 10px; }
+        table.stats { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        table.stats th, table.stats td { padding: 12px; border: 1px solid var(--border); text-align: center; }
+        table.stats th { background: var(--bg-color); color: var(--primary); }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="sources.html">The Witnesses</a>
+        <a href="about.html">About</a>
+        <a href="analysis.html" class="active">Analysis</a>
+        <a href="downloads.html">Downloads</a>
+        <a href="view.html">View Text</a>
+    </nav>
+
+    <div class="hero" style="padding: 3rem 1rem; margin-bottom: 2rem;">
+        <h1 style="font-family: 'Noto Nastaliq Urdu', serif; font-size: 3rem;">دریافتیں</h1>
+        <p>What the Collation Revealed</p>
+    </div>
+
+    <div class="container">
+        <div class="finding-card">
+            <h2>Finding One: The Corruption of GM 1906</h2>
+            <p><strong>The short version:</strong> The 1906 print edition is not Mah Laqa Bai's text. It is an editor's text.</p>
+            <p><strong>Chronological proof:</strong> SJ 1818 was commissioned by Mah Laqa herself and completed six years before her death. It is fully Dakhni. If she had revised toward northern Urdu, that revision would appear here. It does not. Her ustad Iman died in 1806 — twelve years before SJ. The revision-under-Iman hypothesis is chronologically impossible.</p>
+            <p><strong>Shared scribal error:</strong> Ghazal 69.3: SJ and GM share the error <em>مرا</em> for <em>مزا</em> while BL has the correct reading. This is the Lachmannian proof of GM's derivation from SJ.</p>
+            <p><strong>Statistical proof:</strong> From the evolution matrix built for this edition:</p>
+            <table class="stats">
+                <tr><th>Transition</th><th>Unchanged</th><th>Minor change</th><th>Major change</th></tr>
+                <tr><td>Manuscripts (TO→SJ)</td><td>76%</td><td>23.2%</td><td>0.8%</td></tr>
+                <tr><td>Print (SJ→GM)</td><td>26.7%</td><td>41%</td><td>32.2%</td></tr>
+            </table>
+            <p>A poet revising her own work over nineteen years changed 0.8% of couplets substantially. An editor in 1906 changed 32.2% substantially.</p>
+        </div>
+
+        <div class="finding-card">
+            <h2>Finding Two: The Dakhni Question</h2>
+            <p>For over a century, scholars assumed Mah Laqa Bai revised her own Dakhni poetry toward northern Urdu. The manuscript evidence restores Mah Laqa Bai to the position previously denied to her: a Dakhni poet who never abandoned her linguistic heritage. Previous scholars were not careless; they simply had the wrong text. <em>(یہ تمام محققین نے جو کچھ لکھا وہ ان کے سامنے موجود متن کی روشنی میں درست تھا۔ لیکن وہ متن ماہ لقا کا نہیں تھا۔)</em></p>
+        </div>
+
+        <div class="finding-card">
+            <h2>Finding Three: Computational Analysis</h2>
+            <p><strong>The phylogenetic network</strong> visualizes Levenshtein distances between sources. BL, TO, and SJ cluster within a range of 0.016 distance units. GM sits on an isolated branch requiring the scale to expand to 0.2 — twelve times the total spread of the manuscript tradition.</p>
+            <div style="background: #f1f5f9; padding: 40px; text-align: center; border: 1px dashed var(--border); border-radius: 8px; color: var(--secondary); margin: 20px 0;">
+                <em>[SplitsTree Graph Placeholder - Upload PNG to repository to display]</em>
+            </div>
+            <p>Fit value 100 in both diagrams means the two-dimensional representation is a perfect encoding of the distance data — no approximation, no distortion.</p>
+        </div>
+    </div>
+</body>
+</html>

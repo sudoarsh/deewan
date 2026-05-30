@@ -21,55 +21,136 @@ body {
 }
 
 /* =========================================
-   MODERN THICK NAVIGATION BAR
+   RESPONSIVE NAVIGATION & DROPDOWNS
    ========================================= */
-nav {
+.site-nav {
     background-color: rgba(26, 34, 44, 0.98); 
     backdrop-filter: blur(12px);
-    padding: 1.5rem 2rem; 
     position: sticky;
     top: 0;
     z-index: 100;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    padding: 0 2rem;
+    min-height: 75px;
     display: flex;
     justify-content: center;
-    gap: 2.5rem; 
-    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    align-items: center;
 }
 
-nav a {
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
     color: #94A3B8; 
     text-decoration: none;
     font-size: 1.05rem;
     font-weight: 600;
     letter-spacing: 0.5px;
     padding-bottom: 6px;
-    position: relative;
     transition: color 0.3s ease;
+    display: block;
 }
 
-/* Hover and Active State Text Color */
-nav a:hover, 
-nav a.active { 
+.nav-links a:hover, 
+.nav-links a.active { 
     color: #ffffff; 
 }
 
-/* The Animated Gold Underline */
-nav a::after {
-    content: '';
+/* Dropdown Container Styling */
+.dropdown-content {
+    display: none;
     position: absolute;
-    width: 0;
-    height: 3px;
-    bottom: 0;
-    left: 0;
-    background-color: var(--accent);
-    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    border-radius: 2px;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #1A222C;
+    min-width: 220px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    border-radius: 8px;
+    border: 1px solid var(--secondary);
+    overflow: hidden;
+    padding: 10px 0;
 }
 
-/* Trigger the underline on hover or if it has the .active class */
-nav a:hover::after,
-nav a.active::after {
-    width: 100%;
+.dropdown-content a {
+    padding: 12px 20px;
+    font-size: 0.95rem;
+    padding-bottom: 12px; /* Reset the active underline padding */
+}
+
+.dropdown-content a:hover {
+    background-color: var(--secondary);
+    color: var(--accent);
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Mobile Hamburger Button (Hidden on Desktop) */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+/* --- MOBILE RESPONSIVENESS --- */
+@media screen and (max-width: 850px) {
+    .site-nav {
+        justify-content: flex-end; /* Push hamburger to the right */
+        padding: 1rem 2rem;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none; /* Hidden by default on mobile */
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: rgba(26, 34, 44, 0.98);
+        padding: 1rem 0 2rem 0;
+        gap: 1.5rem;
+        border-top: 1px solid var(--secondary);
+    }
+
+    /* JavaScript will add this class when the button is clicked */
+    .nav-links.show {
+        display: flex;
+    }
+
+    .dropdown-content {
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: none;
+        box-shadow: none;
+        border: none;
+        background-color: transparent;
+        padding-left: 1rem;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
 }
 
 /* =========================================

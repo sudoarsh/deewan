@@ -1,4 +1,18 @@
 document.addEventListener("DOMContentLoaded", () => {
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu');
+    const navLinks = document.getElementById('nav-links');
+
+    if (mobileMenuBtn && navLinks) {
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('show');
+        });
+    }
+
+    // ... your existing table and hover script logic continues below ...
+});
+
+document.addEventListener("DOMContentLoaded", () => {
     // 1. Render Table
     const tbody = document.getElementById('tableBody');
     tbody.innerHTML = ''; 

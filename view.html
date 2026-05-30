@@ -4,32 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interactive Collation - Diwan of Mah Laqa Bai Chanda</title>
-    <link rel="stylesheet" href="style.css">
-     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <nav>
         <a href="index.html">Home</a>
-        <a href="about.html">About</a>
+        <a href="sources.html">The Witnesses</a>
         <a href="view.html">View Text</a>
     </nav>
 
-    <div class="hero">
-        <h1>Diwan of Mah Laqa Bai Chanda</h1>
-        <p>Interactive Textual Collation</p>
+    <div class="hero" style="padding: 3rem 1rem; margin-bottom: 2rem;">
+        <h1>Interactive Collation Matrix</h1>
     </div>
 
     <div class="container">
-        
-        <div class="controls">
-            <span class="control-label">Select Witnesses:</span>
-            <label><input type="checkbox" class="col-toggle" value="BL" checked> BL (1799)</label>
-            <label><input type="checkbox" class="col-toggle" value="TO" checked> TO (1811)</label>
-            <label><input type="checkbox" class="col-toggle" value="SJ" checked> SJ (1818)</label>
-            <label><input type="checkbox" class="col-toggle" value="GM" checked> GM (Print)</label>
+        <div class="controls" id="witness-controls">
+            <span class="control-label">Active Witnesses:</span>
+            <label data-witness="BL"><input type="checkbox" class="col-toggle" value="BL" checked> BL (1799)</label>
+            <label data-witness="TO"><input type="checkbox" class="col-toggle" value="TO" checked> TO (1811)</label>
+            <label data-witness="SJ"><input type="checkbox" class="col-toggle" value="SJ" checked> SJ (1818)</label>
+            <label data-witness="GM"><input type="checkbox" class="col-toggle" value="GM" checked> GM (1906)</label>
+        </div>
+
+        <div id="witness-info" style="background: #e2e8f0; color: #334155; padding: 15px 25px; border-radius: 8px; margin-top: -10px; margin-bottom: 25px; font-size: 0.95rem; text-align: center; transition: all 0.3s ease; border: 1px solid #cbd5e1; min-height: 24px;">
+            <em>Hover over a witness toggle above to view its historical context.</em>
         </div>
 
         <div class="table-wrapper">
@@ -43,8 +45,7 @@
                         <th class="col-GM">GM (Print)</th>
                     </tr>
                 </thead>
-                <tbody id="tableBody">
-                    </tbody>
+                <tbody id="tableBody"></tbody>
             </table>
         </div>
     </div>

@@ -74,5 +74,23 @@
             </div>
         </div>
     </div>
+<script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const mobileMenuBtn = document.getElementById('mobile-menu');
+            const navLinks = document.getElementById('nav-links');
+
+            if (mobileMenuBtn && navLinks) {
+                // Use both touchstart and click for maximum mobile compatibility
+                ['click', 'touchstart'].forEach(function(evt) {
+                    mobileMenuBtn.addEventListener(evt, function(e) {
+                        e.preventDefault(); // Stops double-firing on some phones
+                        navLinks.classList.toggle('show');
+                    }, { passive: false });
+                });
+            }
+        });
+    </script>
+
+    <script src="script.js"></script>
 </body>
 </html>

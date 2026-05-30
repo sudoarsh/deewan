@@ -132,9 +132,9 @@ body {
         border-top: 1px solid var(--secondary);
     }
 
-    /* JavaScript will add this class when the button is clicked */
+/* JavaScript will add this class when the button is clicked */
     .nav-links.show {
-        display: flex;
+        display: flex !important;
     }
 
     .dropdown-content {

@@ -1,48 +1,146 @@
 /* =========================================
-   BULLETPROOF URDU & DIFF STYLES
-   (Overrides Cayman Theme Defaults)
+   BASE STYLING & NAVIGATION
    ========================================= */
-
-/* 1. Force Nastaliq, RTL, and EXACTLY Two Lines */
-#deewanTable .urdu-text {
-    font-family: "Jameel Noori Nastaleeq", "Nafees Nastaleeq", "Noto Nastaliq Urdu", serif !important;
-    font-size: 24px !important;
-    line-height: 2.4 !important;
-    text-align: right !important;
-    direction: rtl !important;
-    white-space: nowrap !important; /* Prevents word-wrapping, forcing exactly 2 lines */
+:root {
+    --primary: #2c3e50;
+    --bg-color: #f8f9fa;
+    --text-color: #333;
 }
 
-/* 2. Force Diff Highlighting Colors */
-#deewanTable span.diff { 
-    padding: 0 4px !important; 
-    border-radius: 3px !important; 
-    font-weight: bold !important; 
-    background-color: transparent; /* Reset Cayman backgrounds */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
 }
 
-/* Green: The Anchor/Consensus Reading */
-#deewanTable span.diff-anchor { background-color: #d4edda !important; color: #155724 !important; border-bottom: 2px solid #28a745 !important; } 
-
-/* Red: GM's Ideological Recension (Locked) */
-#deewanTable span.diff-gm { background-color: #f8d7da !important; color: #721c24 !important; border-bottom: 2px solid #dc3545 !important; } 
-
-/* Yellow: Variant Reading 1 */
-#deewanTable span.diff-var1 { background-color: #fff3cd !important; color: #856404 !important; border-bottom: 2px solid #ffc107 !important; } 
-
-/* Blue: Variant Reading 2 */
-#deewanTable span.diff-var2 { background-color: #cce5ff !important; color: #004085 !important; border-bottom: 2px solid #007bff !important; }
-
-/* Purple: Variant Reading 3 */
-#deewanTable span.diff-var3 { background-color: #e2d9f3 !important; color: #4a2377 !important; border-bottom: 2px solid #6f42c1 !important; }
-
-/* 3. Fix Table Layout under Cayman */
-#deewanTable th {
-    text-align: center !important;
-    background-color: #2c3e50 !important;
-    color: white !important;
+nav {
+    background-color: #1a252f;
+    padding: 1rem;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
-#deewanTable td.id-col {
-    text-align: center !important;
-    vertical-align: middle !important;
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 20px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
 }
+
+nav a:hover {
+    color: #3498db;
+}
+
+/* =========================================
+   HERO BANNER (Miniature Painting)
+   ========================================= */
+.hero {
+    /* The linear-gradient darkens the image so white text stays readable */
+    background: linear-gradient(rgba(26, 37, 47, 0.7), rgba(26, 37, 47, 0.8)), url('header-bg.jpg');
+    background-size: cover;
+    background-position: center 20%;
+    color: white;
+    text-align: center;
+    padding: 4rem 1rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    margin-bottom: 2rem;
+}
+
+.hero h1 { margin: 0; font-size: 2.8rem; font-weight: 700; letter-spacing: 1px; }
+.hero p { margin-top: 10px; font-size: 1.3rem; opacity: 0.9; font-style: italic; }
+
+/* =========================================
+   CONTROLS & TABLE LAYOUT
+   ========================================= */
+.container {
+    max-width: 1400px;
+    margin: 0 auto 4rem auto;
+    padding: 0 20px;
+}
+
+.controls {
+    background: white;
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    border: 1px solid #e0e0e0;
+}
+
+.control-label { font-weight: bold; color: var(--primary); }
+
+.table-wrapper {
+    overflow-x: auto;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 15px 20px;
+    border: 1px solid #dee2e6;
+    vertical-align: top;
+}
+
+th {
+    background-color: var(--primary);
+    color: white;
+    font-size: 1.1rem;
+    position: sticky;
+    top: 53px; /* Stays right beneath the sticky nav */
+    z-index: 10;
+}
+
+/* =========================================
+   URDU TYPOGRAPHY & DIFF COLORS
+   ========================================= */
+.urdu-text {
+    font-family: "Jameel Noori Nastaleeq", "Nafees Nastaleeq", "Noto Nastaliq Urdu", serif;
+    font-size: 26px;
+    line-height: 2.2;
+    text-align: right;
+    direction: rtl;
+    /* Forces the text to honor the <br> tags exactly, preventing messy wrapping */
+    white-space: nowrap; 
+    min-width: 250px;
+}
+
+.id-col {
+    text-align: center;
+    font-weight: bold;
+    background-color: #f1f3f5;
+    font-family: monospace;
+    font-size: 1.1rem;
+    vertical-align: middle;
+}
+
+/* The Colors */
+span.diff {
+    padding: 0 4px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+span.diff-anchor { background-color: #d4edda; color: #155724; border-bottom: 2px solid #28a745; }
+span.diff-gm { background-color: #f8d7da; color: #721c24; border-bottom: 2px solid #dc3545; }
+span.diff-var1 { background-color: #fff3cd; color: #856404; border-bottom: 2px solid #ffc107; }
+span.diff-var2 { background-color: #cce5ff; color: #004085; border-bottom: 2px solid #007bff; }
+span.diff-var3 { background-color: #e2d9f3; color: #4a2377; border-bottom: 2px solid #6f42c1; }
+
+.hide-col { display: none; }

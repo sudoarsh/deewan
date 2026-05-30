@@ -331,3 +331,32 @@ span.diff-var2 { background-color: #DBE6FE; color: #1A2B56; }   /* Lapis Blue (N
 span.diff-var3 { background-color: #F9E1E8; color: #832247; }   /* Magenta/Pink (Standing Musician) */
 
 .hide-col { display: none; }
+
+/* =========================================
+   ORNATE SECTION DIVIDER
+   ========================================= */
+.ornate-divider {
+    text-align: center;
+    margin: 4rem auto;
+    position: relative;
+    width: 60%; /* Keeps the line from stretching too far */
+}
+
+.ornate-divider::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    border-bottom: 1px solid var(--border);
+    z-index: 1;
+}
+
+.ornate-divider span {
+    position: relative;
+    z-index: 2;
+    background-color: var(--bg-color); /* Matches the page background to "cut" the line */
+    padding: 0 20px;
+    color: var(--accent);
+    font-size: 1.5rem;
+}

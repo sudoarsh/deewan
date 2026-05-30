@@ -83,5 +83,22 @@
             <p>Fit value 100 in both diagrams means the two-dimensional representation is a perfect encoding of the distance data — no approximation, no distortion.</p>
         </div>
     </div>
+
+<script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const mobileMenuBtn = document.getElementById('mobile-menu');
+            const navLinks = document.getElementById('nav-links');
+
+            if (mobileMenuBtn && navLinks) {
+                ['click', 'touchstart'].forEach(function(evt) {
+                    mobileMenuBtn.addEventListener(evt, function(e) {
+                        e.preventDefault(); 
+                        navLinks.classList.toggle('show');
+                    }, { passive: false });
+                });
+            }
+        });
+    </script>
+    
 </body>
 </html>

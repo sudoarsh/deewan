@@ -166,7 +166,7 @@ th {
     text-align: center;
     position: sticky;
     /* Adjusted from 65px to 78px to account for the new thicker navbar */
-    top: 78px; 
+    top: 0px; 
     z-index: 10;
     letter-spacing: 0.5px;
 }

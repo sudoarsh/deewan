@@ -197,6 +197,18 @@ body {
     flex-shrink: 0;
 }
 
+/* Helper class for alternating right-aligned images */
+.bio-reverse {
+    flex-direction: row-reverse;
+}
+
+/* Ensure mobile stacking keeps the image on top */
+@media screen and (max-width: 850px) {
+    .bio-reverse {
+        flex-direction: column; 
+    }
+}
+
 /* Makes the bio section stack neatly on mobile phones */
 @media screen and (max-width: 850px) {
     .bio-section {

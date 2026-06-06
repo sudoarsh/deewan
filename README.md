@@ -2,7 +2,7 @@
 
 A companion repository housing the complete collation dataset of four primary manuscript witnesses for Mah Laqa Bai Chanda's poetic works. This repository enables scholars to independently verify editorial conclusions and reproduce the textual analysis presented in the published critical edition.
 
-**Live website**: https://sudoarsh.github.io/deewan
+**Live website**: https://sudoarsh.github.io/mahlaqa
 
 ## Overview
 
